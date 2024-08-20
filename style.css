@@ -1,0 +1,196 @@
+
+body {
+    background: linear-gradient(135deg, #D0D0D0 25%, #E0E0E0 25%, #E0E0E0 50%, #D0D0D0 50%, #D0D0D0 75%, #E0E0E0 75%, #E0E0E0 100%),
+                linear-gradient(45deg, #D0D0D0 25%, transparent 25%, transparent 50%, #D0D0D0 50%, #D0D0D0 75%, transparent 75%, transparent);
+    background-size: 20px 20px; /* Adjust size as needed */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrollbars from appearing */
+    filter: contrast(1.5) brightness(1.1) blur(.2px) hue-rotate(-5deg);
+}
+
+
+
+.noise {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: url('noise.jpg'); /* Your noise texture image */
+    opacity: 0.2; /* Adjust opacity to control the intensity */
+    z-index: 2; /* Ensure it sits above the scanlines */
+}
+
+.window {
+    width: 40vw; /* 80% of the viewport width */
+    height: 70vh; /* 80% of the viewport height */
+    max-width: 350px; /* Optional: limit maximum width */
+ /* Optional: limit maximum height */
+    min-width: 300px;
+    min-height: 500px;
+    background-color: #FFFFFF; /* White background for content area */
+    border: 2px solid #000; /* Black border to simulate window edges */
+    box-shadow: 4px 4px #000; /* Simulates the pixelated shadow effect */
+    display: flex;
+    flex-direction: column;
+    margin: auto; /* Center horizontally */
+    box-sizing: border-box;
+    
+}
+
+h1, p {
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.5);
+}
+.scanlines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allows clicks to pass through */
+    background: repeating-linear-gradient(
+        rgba(0, 0, 0, 0.1) 0px,
+        rgba(0, 0, 0, 0.1) 2px,
+        transparent 2px,
+        transparent 3px
+    );
+}
+.window-controls {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    background-color: #E0E0E0; /* Light grey background for controls */
+    border-bottom: 2px solid #000; /* Black border for control area */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+
+
+.window-controls .controls-right {
+    margin-left: auto; /* Pushes controls-right to the right */
+    display: flex; /* Ensures controls are in a row */
+    align-items: center; /* Aligns controls vertically */
+}
+
+.window-controls .control {
+    margin-left: 10px; /* Spacing between controls */
+}
+
+.control {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em; /* Adjust font size as needed */
+    color: #000;
+    background-color: #D0D0D0; /* Background color for control buttons */
+    border: 2px solid #000; /* Border for control buttons */
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 3px; /* Slightly rounded corners */
+    text-align: center;
+    transition: background-color 0.3s, border-color 0.3s; /* Smooth transitions */
+}
+
+.control i {
+    display: inline-block;
+}
+
+.control:hover {
+    background-color: #B0B0B0; /* Darken on hover */
+}
+
+.control:active {
+    background-color: #A0A0A0; /* Even darker on click */
+}
+
+.container {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 30px); /* Adjust height to account for window controls */
+    flex: 1; /* Allows the content area to grow and fill the available space */
+    
+}
+
+.title {
+    font-size: 1.2em; /* Larger font size for the title */
+    margin-bottom: 10px; /* Space between title and subtitle */
+    background-color: #E0E0E0; /* Slightly darker grey background */
+    padding: 20px; /* Padding for the title area */
+    border: 2px solid #000; /* Black border */
+    box-shadow: inset 2px 2px #000; /* Inset shadow for a pressed effect */
+    color: #000;
+    text-align: center; /* Center align text */
+}
+
+.title h1 {
+    margin: 0; /* Remove default margin for h1 */
+}
+
+.subtitle {
+    font-size: 0.8em; /* Smaller font size for the subtitle */
+    color: #666; /* Lighter color for subtitle text */
+    margin: 10px 0 0; /* Space between subtitle and title */
+    padding: 0; /* Remove padding if not needed */
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.button {
+    display: block;
+    padding: 15px 0; /* Increase padding for larger buttons */
+    background-color: #E0E0E0; /* Same grey background */
+    color: #000;
+    text-decoration: none;
+    font-size: 1.5em; /* Larger font size */
+    border: 2px solid #000;
+    box-shadow: 2px 2px #000; /* Adds a pixelated shadow effect */
+    text-align: center;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #A9A9A9; /* Darken slightly on hover */
+}
+
+.button:active {
+    box-shadow: inset 2px 2px #000; /* Inset shadow to simulate button press */
+}
+
+.back-button {
+    display: inline-block; /* Make the button inline-block to align it properly */
+    font-size: 1.5em; /* Size of the back arrow */
+    color: #000; /* Color of the back arrow */
+    text-decoration: none; /* Remove underline */
+    background-color: #E0E0E0; /* Background color to match the title */
+    border: 2px solid #000; /* Border around the button */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 10px; /* Padding inside the button */
+    box-shadow: 2px 2px #000; /* Shadow effect for the button */
+    margin-top: 10px; /* Space between the title and the button */
+}
+
+.back-button:hover {
+    background-color: #A9A9A9; /* Darken slightly on hover */
+}
+
+.back-button:active {
+    box-shadow: inset 2px 2px #000; /* Inset shadow to simulate button press */
+}
+h2 {
+    text-decoration: underline;
+}
