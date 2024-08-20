@@ -9,9 +9,8 @@
 </head>
 
 <body>
-    <div class="window">
+    <div class="window projects-window">
         <div class="window-controls">
-   
             <a href="index.html" class="control info"><i class="fas fa-arrow-left"></i></a>
             <div class="controls-right">
                 <div class="control minimize"><i class="fas fa-minus"></i></div>
@@ -25,25 +24,67 @@
                 
             </div>
             <div class="body">
+                <section class="2t1l">
+                    <h2>Mercury Alert Door and Motion Sensors</h2>
+                    <h3>Summer 2024</h3>
+                    <p>While I was working at Mercury Alert AI, we received a request from a potential customer to expand our line of IoT devices to include door sensor. 
+                        I was put in charge of creating the hardware for these devices as well as the on device software. I can't go into too much detail, as this is a company project, but I have photos I can show of the prototypes.
+                        <div class="image-container"> 
+                            <img src="images\doorsensorprotypes.jpg" alt="ESP32 Smartwatch Schematic" title="Door Sensor Prototypes", class="responsive-img">
+                        </div>
+                        The team then received a request for a motion sensor. Because of the way that the Door Sensor was designed, it only took some small modifications to create a motion sensor.
+                        After completing the hardware and device code, and doing a ton of trouble shooting and app testing, my final task was to create data sheets for both designs so customers could easily find specs and dimensions. I've attached a preview of the motion sensor datasheet below. I think the most import takeaway from this project was that I finally got good with GIT.
+                        <div class="image-container"> 
+                            <img src="images\Screenshot 2024-08-20 135135.png" alt="ESP32 Smartwatch Schematic" title="Door Sensor Prototypes", class="responsive-img">
+                        </div>
 
+
+                    </p>
+
+                </section>
                 <section class="background">
-                    <h2>Background</h2>
-                    <p>I’m a third-year student at the University of San Diego, studying Electrical Engineering and Applied Mathematics. Originally from Colorado, I also work as a Hardware Engineer at Mercury Alert AI.</p>
+                    <h2>ESP32 Smartwatch</h2>
+                    <h3>Spring 2023</h3>
+                    <p>I worked on this project with my roommate Cooper Saylin. He did the majority of the software, while I focused on hardware. First I created the schematic and PCB layout shown below. SPI was used to connect the display to the ESP32 while I2C was used for the accelerometer. There is also an IC for charging so the watch could function without being plugged in. (Looking back, I wished I used USB-C.) 
+                        <div class="image-container"> 
+                            <img src="images\Schematic_ESP32Watch_2024-08-20.png" alt="ESP32 Smartwatch Schematic" title="ESP32 Smartwatch Schematic", class="responsive-img">
+                        </div>
+                        I ordered the PCB's and components from China, and SMD soldered each component to the PCB. Surprisingly the schematic didn't have any mistakes, the smartwatch worked well apart from the charging LED's.(Turns out we needed to configure the charge status pins as input_pullup for the LED's to work properly.)
+                        <div class="image-container"> 
+                            <img src="images\PCBwithparts.jpg" alt="ESP32 Smartwatch Schematic" title="ESP32 Smartwatch Schematic", class="responsive-img">
+                        </div>
+                        Cooper and I used the esp-idf and Arduino frameworks to program the device. 
+                        We made use of Free-RTOS to schedule tasks. 
+                        An image of the final watch in with a 3d printed case is shown below.
+                        <div class="image-container"> 
+                            <img src="images\IMG_0456.jpg" alt="ESP32 Smartwatch Schematic" title="ESP32 Smartwatch Schematic", class="responsive-img">
+                        </div>
+                        Ultimately, we weren't able to developed any good software for the watch (mostly just graphics demos). I think this was because having a bluetooth connected device is a pain with Iphones and Cooper and I gave up. I definitely learned a lot though!
+                    </p>
+                        
+                    
                 </section>
                 <section class="interests">
-                    <h2>Interests</h2>
-                    <p>I’m passionate about rock climbing and mountain biking. I also have a strong interest in learning new math topics, currently focusing on manifolds and geometric algebra. Additionally, I enjoy working on projects with microcontrollers and building IoT devices. When I have extra time, I also enjoy gaming with friends.</p>
+                    <h2>Prospect Valley Elementary School Redesign</h2>
+                    <h3>Spring 2022 - Group Project for Ace Mentorship Program</h3>
+                    <p>Unfortunately I couldn't find any pictures for this project. I collaborated with a small team to develop a comprehensive plan for a new elementary school. I interpreted the client's vision to create a detailed site plan, floor plan, landscape plan, and MEP (Mechanical, Electrical, and Plumbing) systems, along with 3D renderings of the proposed design. During this process, I was mentored by professionals in the Structural, Civil, and Architectural fields. I also had the opportunity to present our proposed plan to a panel of judges at the College of Architecture and Planning at CU Denver.
+                    </p>
                 </section>
                 <section class="goals">
-                    <h2>Goals</h2>
-                    <p>I aspire to become an electrical engineer specializing in embedded systems. My objectives include graduating from college, securing a fulfilling job, and contributing to innovative projects in the field's of both EE and Math.</p>
+                    <h2>Piezo Shoe</h2>
+                    <h3>Spring 2022</h3>
+                    <p>
+                        The idea was to store the small voltage impulse caused from compressing a piezo crystal in a capacitor for later use. I made piezo modules (shown below) wired in parallel in order to maximize the power output from the piezo crystals. 
+                        <div class="image-container"> 
+                            <img src="images\piezomodule.jpg" alt="piezo" title="Piezo Modules", class="responsive-img">
+                        </div>
+                        I modeled the design using SolidWorks and fabricated the design through 3D printing. I had to include a dual bridge rectifier as well as other circuitry to process the piezo signal. I ended up presented the finished prototype (shown below) at the University of Colorado Boulder Design Expo.
+                        <div class="image-container"> 
+                            <img src="images\piezoposter.jpg" alt="ESP32 Smartwatch Schematic" title="Piezo Poster", class="responsive-img">
+                        </div>
+                    </p>
                 </section>
-                <section class="2t1l">
-                    <h2>Two Truths One Lie</h2>
-                    <p>1. I've failed a college class.</p>
-                    <p>2. This whole website was made by ChatGPT.</p>
-                    <p>3. If you close this "window", you'll get a present.</p>
-                </section>
+
             </div>
         </div>
     </div>

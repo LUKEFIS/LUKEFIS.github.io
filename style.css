@@ -7,6 +7,26 @@
     font-style: normal;
   }
 
+  .image-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    max-width: 800px; /* Maximum width of the container */
+    min-width: 300px; /* Minimum width of the container */
+    max-height: 700px; /* Maximum height of the container */
+    min-height: 200px; /* Minimum height of the container */
+    padding: 20px; /* Padding around the image */
+    margin: auto; /* Center container horizontally in its parent */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+    overflow: hidden; /* Hide any part of the image that overflows */
+    background-color: #f0f0f0; /* Optional: background color for the container */
+  }
+  
+  .responsive-img {
+    max-width: 100%; /* Ensures image scales with container */
+    max-height: 100%; /* Ensures image scales with container */
+    height: auto; /* Maintain aspect ratio */
+  }
 
 body {
     background: linear-gradient(135deg, #D0D0D0 25%, #E0E0E0 25%, #E0E0E0 50%, #D0D0D0 50%, #D0D0D0 75%, #E0E0E0 75%, #E0E0E0 100%),
@@ -51,6 +71,16 @@ body {
     margin: auto; /* Center horizontally */
     box-sizing: border-box;
     
+    
+}
+.window.projects-window {
+    width: 85vw; /* 50% of the viewport width, wider than the default */
+    height: 85vh; /* Keeping the height the same */
+    max-width: 1600px; /* Increased maximum width */
+    min-width: 350px; 
+    /* Optional: limit maximum height */
+    min-width: 300px;
+    min-height: 500px;
 }
 
 h1, p {
@@ -129,6 +159,7 @@ h1, p {
     flex-direction: column;
     height: calc(100% - 30px); /* Adjust height to account for window controls */
     flex: 1; /* Allows the content area to grow and fill the available space */
+    
     
 }
 
